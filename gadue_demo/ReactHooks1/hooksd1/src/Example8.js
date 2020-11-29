@@ -1,5 +1,10 @@
 import React, { useRef,useState ,useEffect} from 'react';
+// React 是 mvvm 架构，数据（model）变了，视图（view）也会自动刷新，无需操作 Dom。
+// 但是有些功能不得不操作 DOM，比较常见的有：设置 input 焦点问题，必须先获取 input 的 dom 对象，然后调用 focus() 方法获取焦点。
+// React 为开发者提供获取 dom 的对应方法。类组件中使用 React.createRef() 获取 dom 对象  
+// 在函数式组件中无法使用 React.createRef() 特性，取而代之的是 React.useRef() 钩子：
 
+类组件中使用 React.createRef() 获取 dom 对象：
 function Example8(){
     const inputEl=useRef(null)
     const onButtonClick=()=>{
