@@ -1,0 +1,1 @@
+使用next.js 处理ssr（服务端渲染 server side render）和 SEO ，并将之分成多page web 工程。
