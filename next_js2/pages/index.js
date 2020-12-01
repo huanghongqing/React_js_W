@@ -1,68 +1,59 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Comp from '../components/comp'
+import React from 'react';
+import Link from 'next/link'
+import Router from 'next/router'
+const Home=()=>{
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    Router.events.on('routeChangeStart',(...args)=>{
+        console.log("routhe change start.",...args)
+    })
+    Router.events.on('routeChangeComplete',(...args)=>{
+        console.log("routhe change complete.",...args)
+    })
 
-      <main className={styles.main}>
-        <Comp>component here!</Comp>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+    Router.events.on('beforeHistoryChange',(...args)=>{
+        console.log("before History Change.",...args)
+    })
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-          
-        </p>
+    Router.events.on('hashChangeStart',(...args)=>{
+        console.log("hash Change Start.",...args)  //hash 连接<Link href="#tag"><a>tag</a></Link>  ，scroll to某个标签
+        // #的含义，hash连接，例如 http://example.com/index.html#user;
+        // 就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域。
+        // 为网页位置指定标识符，有两个方法。一是使用锚点，比如，二是使用id属性，html里针对#值得变化，增加了onhashchange事件
+    })
+    function goB(){
+        //Router.push("/Bpage")
+        //Router.push("/Device?name='T-80U'")
+        Router.push({
+            pathname:'/Device',
+            query:{name:'T-80U',numbers:'2'}
+        })
+    }
+    return (
+        <>
+            <div>Home page.</div>
+            <div><Link href="/Device?name=T-72B3"><a>Device .</a></Link></div>
+            <div><Link href="/Apage"><a>A page .</a></Link></div>
+            <div><Link href="/Bpage"><a>B page .</a></Link></div>
+            <div>
+                <button 
+                    onClick={
+                        ()=>{
+                            Router.push("/Apage")
+                        }
+                    }
+                
+                >
+                    go A
+                </button>
+            </div>
+            <div>
+                <button onClick={goB}>
+                    device
+                </button>
+            </div>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+        </>
+    )
 }
+
+export default Home

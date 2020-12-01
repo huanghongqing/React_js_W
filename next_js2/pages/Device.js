@@ -1,6 +1,14 @@
-function Device(){
-    return (
-        <button>Device</button>
+import {withRouter} from 'next/router'
+import Link from 'next/link'
+
+const Device =({router}) =>{
+    return(
+        <>
+            <div>
+                {router.query.name}  ,
+                {router.query.numbers}
+            </div>
+        </>
     )
 }
-export default Device
+export default withRouter(Device)
