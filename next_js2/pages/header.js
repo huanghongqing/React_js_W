@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import MyHeader from '../components/myheader'
+//import MyHeader from '../components/myheader'
 import {Button} from 'antd'
 function Header(){
     return(
