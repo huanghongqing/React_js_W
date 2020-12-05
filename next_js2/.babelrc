@@ -1,0 +1,14 @@
+{
+    "presets": ["next/babel"],
+    "plugins": [
+        [
+            "import",
+            {
+                // antdesign按需加载
+                "libraryName":"antd", 
+                //css也按需加载,现在暂时在_app.js里引入css文件，就不在这里引入了。
+                //"style":"css"
+            }
+        ]
+    ]
+}
