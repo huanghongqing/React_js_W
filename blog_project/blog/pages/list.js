@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
 import {Row,Col} from 'antd'
 
-const Home=()=> {
+const List=()=>{
   return (
     <div className={styles.container}>
       <Head>
@@ -22,4 +22,4 @@ const Home=()=> {
     </div>
   )
 }
-export default Home
+export default List

@@ -1,14 +1,14 @@
 //antdesign 栅格化系统，横向24栏，相当于屏幕分成了24列
 //参考info :https://ant.design/components/grid-cn/
 import React from 'react'
-import styles from '../styles/Header.module.css'
+import '../styles/Header.module.css'
 import {Row,Col,Menu} from 'antd'
 import {HomeOutlined,VideoCameraAddOutlined,CoffeeOutlined} from '@ant-design/icons'
 
 const Header = ()=>(
     <div className="header">
         <Row type="flex" justify="center">
-            <Col xs={24} sm={24} md={10} lg={10} xl={10}>
+            <Col xs={24} sm={24} md={10} lg={15} xl={12}>
                 <span className="header-logo">Akin </span>
                 <span className="header-txt">代码人生,江湖沉浮,一望无际，来去如风.</span>
             </Col>
