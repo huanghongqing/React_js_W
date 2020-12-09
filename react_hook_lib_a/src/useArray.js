@@ -1,6 +1,6 @@
 import {useMethods} from './useMethods'
 import invariant from 'invariant'
-
+// 自定义hook不能放在index.js  里的最外层执行，会报错：“ERROR: TOO MANY RE-RENDERS. REACT LIMITS THE NUMBER OF RENDERS TO PREVENT AN INFINITE LOOP.”
 const arrayMethods = {
     push(state, item) {
         return state.concat(item);

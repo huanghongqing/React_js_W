@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Myapp from './Myapp'
+import LayerHookApp from './LayerHookTest'
 
 
 ReactDOM.render(
-    <Myapp />,
+    <LayerHookApp />,
   document.getElementById('root')
 );
 
