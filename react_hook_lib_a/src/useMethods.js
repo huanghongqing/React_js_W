@@ -5,9 +5,9 @@ export const useMethods = (initialValue, methods) => {
     const boundMethods = useMemo(
         () => Object.entries(methods).reduce(
             (methods, [name, fn]) => {
-                console.log(methods)
                 const method = (...args) => {
-                    setValue(value => fn(value, ...args));
+                    //(例如此时传入pop,相当于闭包pop(value,...args)执行完结果再set给Value)
+                    setValue(value => fn(value, ...args));  
                 };
                 methods[name] = method;
                 return methods;
