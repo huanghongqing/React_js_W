@@ -18,6 +18,8 @@ function Example8(){
     const textRef=useRef()
     useEffect(
         ()=>{
+            //useRef可以保存React中的变量。我们这里就写一个文本框，文本框用来改变text状态。又用useRef把text状态进行保存
+            //useRef可以获取闭包里的最新值
             textRef.current=text;
             console.log(textRef.current)
         }

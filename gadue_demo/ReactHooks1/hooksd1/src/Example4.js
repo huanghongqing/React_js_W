@@ -1,6 +1,6 @@
 import React, { Component,useState,createContext,useContext }from 'react';
 import {BrowserRouter as Router ,Route,Link} from 'react-router-dom'
-
+//创建一个上下文管理的组件，用来统一导出 Context 实例,这里可以放到单独的文件里去，然后再单独的子组件/父组件文件里去import
 const CountContext=createContext()
 
 function Example(){
