@@ -3,9 +3,10 @@ import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
-import {Row,Col,List} from 'antd'
+import {Row,Col,List,Breadcrumb} from 'antd'
 import React,{useState} from 'react'
 import {CalendarOutlined,FolderOutlined,FireFilled} from '@ant-design/icons'
+import '../styles/list.css'
 
 
 const MyList=()=> {
@@ -24,6 +25,12 @@ const MyList=()=> {
       <Header></Header>
       <Row  className="comm-main" type="flex" justify="center">
         <Col className="comm-left" xs={24} sm={24} md={16} lg={18} xl={14}>
+            <div className="bread-div">
+              <Breadcrumb>
+                <Breadcrumb.Item><a href="/">首页</a></Breadcrumb.Item>
+                <Breadcrumb.Item>技术博客</Breadcrumb.Item>
+              </Breadcrumb>
+            </div>
             <List 
               header={<div>最新日志</div>}
               itemLayout="vertical"
