@@ -15,11 +15,28 @@ a {
 * {
   box-sizing: border-box;
 }
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  /*display: flex;
+   flex-direction: column;
+  justify-content: center;
+  align-items: stretch; */
+}
+
 .comm-left{
   background-color: #FFF;
   padding:.3rem;
   border-radius: .3rem;
   border:1px solid #eee;
+}
+.comm-right{
+  background-color: #FFF;
+  margin-left: .5rem;
+  padding:.3rem;
+  border-radius: .3rem;
+  border-bottom:1px solid #eee;
+
 }
 .comm-box{
   background-color: #FFF;
@@ -34,4 +51,21 @@ a {
   margin-top: .5rem;
 }
 
+.list-title{
+  font-size:1.3rem;
+  color: #1e90ff;
+  padding: 0 0.5rem;
+}
+.list-context{
+  color:#777;
+  padding:.5rem;
+}
+.list-icon{
+  padding:.5rem 0;
+  color:#AAA;
+}
+.list-icon span{
+  display: inline-block;
+  padding: 0 10px;
+}
 
