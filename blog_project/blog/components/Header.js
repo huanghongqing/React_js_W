@@ -3,7 +3,7 @@
 import React from 'react'
 import '../styles/Header.module.css'
 import {Row,Col,Menu} from 'antd'
-import {HomeOutlined,VideoCameraAddOutlined,CoffeeOutlined} from '@ant-design/icons'
+import {HomeOutlined,CodeOutlined,CoffeeOutlined} from '@ant-design/icons'
 
 const Header = ()=>(
     <div className="header">
@@ -18,8 +18,8 @@ const Header = ()=>(
                     <Menu.Item key="home">
                         <HomeOutlined />Home
                     </Menu.Item>
-                    <Menu.Item key="Video">
-                        <VideoCameraAddOutlined />video
+                    <Menu.Item key="Code">
+                        <CodeOutlined />code
                     </Menu.Item>
                     <Menu.Item key="life">
                         <CoffeeOutlined />Life
