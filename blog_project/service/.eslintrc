@@ -1,3 +1,6 @@
 {
-  "extends": "eslint-config-egg"
+  "extends": "eslint-config-egg",
+  "indent"  : "off",
+  "react/jsx-indent": "off",
+  "react/jsx-indent-props": "off"
 }
