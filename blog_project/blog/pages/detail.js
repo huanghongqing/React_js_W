@@ -11,6 +11,7 @@ import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 import MarkNav from 'markdown-navbar'
 import 'markdown-navbar/dist/navbar.css'
+import axios from 'axios'
 
 const Detailed=()=>{
   
@@ -225,4 +226,34 @@ it('throws when the enthusiasm level is negative', () => {
     </div>
   )
 }
+Detailed.getInitialProps = async (context)=>{ //这里的console log会输出到node.js 的命令行窗体里，而不是浏览器里。
+    let id=context.query.id
+    const promise =new Promise((resolve,reject)=>{
+        axios('http://localhost:7001/default/getArticleById').then(//这里直接用axios的then成功方法替代了promise的成功回调
+            (res)=>{
+                console.log('detail远程数据结果：',res.data.data[0])
+                resolve(res.data.data[0])  
+                //resolve表示promis 已经定型，成功就把res.data 赋值给promise对象。因此相当于成功后的返回值，
+                //而这个静态函数貌似是getInitialProps初始化props，因此就会让list获得这个值。失败用reject
+            }
+        ).catch(
+            (error)=>{
+                console.log("error="+error)
+                reject(error)
+            }
+        )
+    }).then(//resolve后传递过来的参数，在promise的成功回调里处理。
+        (data)=>{
+            console.log("data="+data)
+            return data;
+        }
+    ).catch(//promise的失败回调，这里也必须return一个值，不然会报undefined的错。
+        (error)=>{
+            console.log("error from promise ="+error)
+            return ({error})
+        }
+    )
+    return await promise
+}
+
 export default Detailed
