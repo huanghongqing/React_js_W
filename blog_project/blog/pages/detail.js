@@ -229,7 +229,7 @@ it('throws when the enthusiasm level is negative', () => {
 Detailed.getInitialProps = async (context)=>{ //这里的console log会输出到node.js 的命令行窗体里，而不是浏览器里。
     let id=context.query.id
     const promise =new Promise((resolve,reject)=>{
-        axios('http://localhost:7001/default/getArticleById').then(//这里直接用axios的then成功方法替代了promise的成功回调
+        axios('http://localhost:7001/default/getArticleById/'+id).then(//这里直接用axios的then成功方法替代了promise的成功回调
             (res)=>{
                 console.log('detail远程数据结果：',res.data.data[0])
                 resolve(res.data.data[0])  

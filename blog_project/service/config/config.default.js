@@ -28,7 +28,7 @@ module.exports = appInfo => {
       // host
       host: 'localhost',
       // port
-      port: '3306',
+      port: '33060',
       // username
       user: 'root',
       // password
@@ -40,6 +40,17 @@ module.exports = appInfo => {
     app: true,
     // load into agent, default is close
     agent: false,
+  };
+
+  config.security ={
+    csrf:{
+      enable: false,
+    },
+    domainWhiteList: ['*']
+  };
+  config.cors={
+    origin: 'http://127.0.0.1:3000',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS,UPDATE'
   };
   return {
     ...config,
