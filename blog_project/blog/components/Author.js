@@ -8,7 +8,7 @@ const Author=(props)=>{
     return (
         <div className="author-div">
             <div>
-                <Avatar size="100" src="https://wx4.sinaimg.cn/orj360/53aaf464ly1glj4j6zzlfj20cs0csaal.jpg" />
+                <Avatar size="100" src="/avator.jpg" />
             </div>
             <div className="author_introduction">
                 {props.children}
